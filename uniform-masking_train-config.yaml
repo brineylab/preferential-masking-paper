@@ -1,0 +1,70 @@
+# Model Config - Uniform Masking
+
+# Masking Probabilities
+mlm_prob: 0.15
+cdr3_prob: 0.15
+
+# Tokenizer 
+vocab_size: 26
+pad_token_id: 21
+mask_token_id: 22
+
+# Model Dimensions (350M parameters, defaults match what was used in the paper)
+num_attention_heads: 20
+num_hidden_layers: 32
+hidden_size: 960
+intermediate_size: 3840
+max_position_embeddings: 322
+position_embedding_type: "rotary"
+
+# Tokenizer
+tokenizer_path: "./tokenizer/vocab.txt"
+padding: "max_length"
+max_length: 320
+truncation: True
+return_special_tokens_mask: False
+separator_token: "<cls><cls>"
+
+# Datasets
+train_file: "./data/A_train.csv"
+validation_file: "./data/A_eval.csv"
+file_type: "csv"
+
+# Collator
+mlm: True
+
+# Training Arguments
+run_name: "uniform-masking-model"
+fp16: True
+seed: 42
+batch_size: 32
+gradient_accumulation_steps: 1
+remove_unused_columns: False
+
+logging_steps: 1000
+save_steps: 25000
+evaluation_strategy: "steps"
+eval_steps: 25000
+warmup_steps: 30000
+max_steps: 500000
+
+peak_learning_rate: 0.0001
+weight_decay: 0.01
+adam_epsilon: 0.000001
+adam_beta1: 0.9
+adam_beta2: 0.98
+
+# Saving and Logging
+overwrite_output_dir: True
+output_dir: "./output/{run_name}"
+logging_first_step: True
+logging_dir: "./logs/{run_name}"
+
+load_best_model_at_end: True
+metric_for_best_model: "eval_loss"
+greater_is_better: False
+
+# change to enable WandB logging
+report_to: "none" # replace with "wandb" for logging using wandb.ai
+wandb_project: "preferential_masking_paper"
+wandb_group: "pre-training"
