@@ -1,0 +1,1 @@
+This folder is intentionally empty. Classifier model test-set metrics from `../2-CoV_classification-5itr.py` and inference results files created in `../4-CoV_classifier_inference.ipynb` will be saved here.
