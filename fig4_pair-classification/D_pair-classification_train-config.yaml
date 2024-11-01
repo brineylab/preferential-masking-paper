@@ -1,0 +1,58 @@
+# Pair Classifier Model Config - Dataset D
+
+# Freeze Base Model Weights or Fine-tune
+freeze_weights: True
+
+# Base Model (replace with the actual model name/path)
+model_name: "uniform-250k"
+model_path: "../models/uniform-250k_model"
+
+# model_name: "uniform-350k"
+# model_path: "../models/uniform-350k_model"
+
+# model_name: "preferential-250k"
+# model_path: "../models/preferential-250k_model"
+
+# Classes
+class_0: "native-pair"
+class_1: "shuffled-pair"
+
+# Tokenizer
+tokenizer_path: "../tokenizer/vocab.txt"
+max_length: 320
+separator_token: "<cls><cls>"
+
+# Datasets
+data_path: "./train-test_splits/D_native-0_shuffled-1_"
+file_type: "csv"
+
+# Training Arguments
+task_name: "50ep_pairs-D"
+fp16: True
+seed: 42
+
+# note: total batch size should be 256; defaults log at the end of each epoch and do eval after every 2 epochs
+batch_size: 32 
+num_train_epochs: 50
+logging_steps: 459
+evaluation_strategy: "steps"
+save_strategy: "no"
+eval_steps: 918
+
+learning_rate: 0.00005
+lr_scheduler_type: "linear"
+warmup_ratio: 0.1
+
+output_dir: "./output/"
+logging_first_step: True
+logging_dir: "./logs/"
+report_to: "none" # replace with "wandb" for logging using wandb.ai
+
+# Weights and Biases (replace with your own logging)
+wandb_project: "preferential_masking_paper"
+wandb_group: "pair-classifier_data-D"
+
+# Saving Results
+results_dir: "./results/"
+save_model: True
+model_save_dir: "../models/"

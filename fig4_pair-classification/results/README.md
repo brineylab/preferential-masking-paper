@@ -1,0 +1,1 @@
+This folder is intentionally empty. Classifier model test-set metrics from `../2-pair_classification-5itr.py` and Dataset C inference results files created in `../3-pair_classifier_inference.ipynb` will be saved here.
