@@ -1,0 +1,1 @@
+This folder is intentionally empty. Per-position inference JSON files created in `../2-per_position_inference.ipynb` will be saved here.
