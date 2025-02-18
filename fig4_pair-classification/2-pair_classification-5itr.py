@@ -114,8 +114,7 @@ def load_and_tokenize(train_config, tokenizer, class_labels):
 
     # read in 5 data splits
     itr_datasets = []
-    # for i in range(5):
-    for i in range(1):
+    for i in range(5):
         data_files = DatasetDict({
             'train': f'{train_config.get("data_path")}train{i}.csv',
             'test': f'{train_config.get("data_path")}test{i}.csv'
