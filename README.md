@@ -22,14 +22,16 @@ Weights for the pre-trained model checkpoints used in the paper can also be down
 
 ## how should I cite this?
 
-The Preferential Masking paper has been published as a [preprint on biorxiv](https://doi.org/10.1101/2024.10.23.619908), and can be cited as:
+The Preferential Masking paper has been published in [Patterns](https://www.cell.com/patterns/fulltext/S2666-3899%2825%2900087-X), and can be cited as:
 
 ```
-Ng, K., & Briney, B. (2024). Focused learning by antibody language models using preferential masking of non-templated regions (p. 2024.10.23.619908). bioRxiv. https://doi.org/10.1101/2024.10.23.619908
+Ng, K., & Briney, B. (2025). Focused learning by antibody language models using preferential masking of non-templated regions. 
+Patterns, 0(0). https://doi.org/10.1016/j.patter.2025.101239
 ```
 
 The current version of the datasets used for pre-training and classifier head fine-tuning (v2024.10.31) can be cited as:
 
 ```
-Ng, K., & Briney, B. (2024). Focused learning by antibody language models using preferential masking of non-templated regions (v2024.10.31) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.14019655
+Ng, K., & Briney, B. (2024). Focused learning by antibody language models using preferential masking of non-templated regions (v2024.10.31) [Data set]. 
+Zenodo. https://doi.org/10.5281/zenodo.14019655
 ```
